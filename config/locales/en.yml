@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  title: "Welcome to scraper"
+  find: "Find topics"
+  search_label: "Enter keywords here"

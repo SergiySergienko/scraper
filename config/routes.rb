@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'main/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'main#index'
+
+  post 'main/find', to: 'main#find',
+      constraints: { format: :json }
+
+  get 'main/vote_up/:id', to: 'main#vote_up'
+  get 'main/vote_down/:id', to: 'main#vote_down'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

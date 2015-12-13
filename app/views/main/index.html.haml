@@ -1,0 +1,14 @@
+%h1
+  = t(:title)
+%div
+  = form_tag(main_find_path, remote: true, id: 'search_form') do
+    .form-group
+      %label
+        = t(:search_category)
+      = select_tag(:category, options_from_collection_for_select(@categories, :id, :name), {class: 'form-control', include_blank: true})
+    .form-group
+      %label
+        = t(:search_label)
+      %input.form-control{type: :text, name: :keywords}
+    = submit_tag(t(:find), {class: 'btn btn-primary btn-lg'})
+.results-wrapper
